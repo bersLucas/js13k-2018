@@ -1,0 +1,19 @@
+{
+  "name": "js13k-2018",
+  "version": "1.0.0",
+  "description": "A submission for js13kgames 2018.",
+  "main": "index.js",
+  "author": "Lucas Bersier <bers.lucas@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-inline": "^0.1.3",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
+    "run-sequence": "^2.2.1",
+    "standard": "^11.0.1"
+  }
+}
