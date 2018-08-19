@@ -14,6 +14,14 @@ body {
     width: 500px;
     height: 500px;
     border: 1px solid red; }
+    body div#gamecube span.good {
+      color: green; }
+    body div#gamecube span.bad {
+      color: red; }
+    body div#gamecube span.current {
+      font-weight: bold; }
+    body div#gamecube span.next {
+      opacity: 0.5; }
 
 div#box {
   width: 50px;

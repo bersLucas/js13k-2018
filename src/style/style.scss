@@ -9,6 +9,22 @@ body {
     width: 500px;
     height: 500px;
     border: 1px solid red;
+
+    span.good {
+      color: green;
+    }
+
+    span.bad {
+      color: red;
+    }
+
+    span.current {
+      font-weight: bold;
+    }
+
+    span.next {
+      opacity: 0.5;
+    }
   }
 }
 
