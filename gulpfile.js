@@ -20,35 +20,42 @@ gulp.task('default', function (c) {
   runSequence(['sass', 'babel'], 'inline', c)
 })
 
+function swallowError (error) {
+  this.emit('end')
+}
+
 gulp.task('sass', function () {
   return gulp.src('src/style/**.scss')
-.pipe(sass({
-  outputStyle: 'nested'
-}).on('error', sass.logError))
-.pipe(autoprefixer(autoprefixerOptions))
-.pipe(gulp.dest('src/style/'))
+    .pipe(sass({
+      outputStyle: 'nested'
+    }).on('error', sass.logError))
+    .pipe(autoprefixer(autoprefixerOptions))
+    .pipe(gulp.dest('src/style/'))
+    .on('error', swallowError)
 })
 
 gulp.task('babel', function () {
   return gulp.src('src/game.js')
     .pipe(babel())
     .pipe(gulp.dest('src/js'))
+    .on('error', swallowError)
 })
 
 gulp.task('inline', function () {
   return gulp.src('src/index.html')
-.pipe(inline({
-  base: '/src',
-  js: uglify,
-  css: minifyCss,
-  disabledTypes: ['svg', 'img'],
-  ignore: []
-}))
-.pipe(htmlmin({
-  collapseWhitespace: true,
-  removeComments: false,
-  minifyCSS: true,
-  minifyJS: true
-}))
-.pipe(gulp.dest('dist'))
+  .pipe(inline({
+    base: '/src',
+    js: uglify,
+    css: minifyCss,
+    disabledTypes: ['svg', 'img'],
+    ignore: []
+  }))
+  .pipe(htmlmin({
+    collapseWhitespace: true,
+    removeComments: false,
+    minifyCSS: true,
+    minifyJS: true
+  }))
+  .pipe(gulp.dest('dist'))
+  .on('error', swallowError)
 })
