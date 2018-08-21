@@ -20,10 +20,6 @@ gulp.task('default', function (c) {
   runSequence(['sass', 'babel'], 'inline', c)
 })
 
-function swallowError (error) {
-  this.emit('end')
-}
-
 gulp.task('sass', function () {
   return gulp.src('src/**.scss')
     .pipe(sass({
@@ -31,14 +27,12 @@ gulp.task('sass', function () {
     }).on('error', sass.logError))
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(gulp.dest('src/compiled'))
-    .on('error', swallowError)
 })
 
 gulp.task('babel', function () {
   return gulp.src('src/*.js')
     .pipe(babel())
     .pipe(gulp.dest('src/compiled'))
-    .on('error', swallowError)
 })
 
 gulp.task('inline', function () {
@@ -57,5 +51,4 @@ gulp.task('inline', function () {
     minifyJS: true
   }))
   .pipe(gulp.dest('dist'))
-  .on('error', swallowError)
 })
