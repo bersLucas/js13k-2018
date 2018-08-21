@@ -25,19 +25,19 @@ function swallowError (error) {
 }
 
 gulp.task('sass', function () {
-  return gulp.src('src/style/**.scss')
+  return gulp.src('src/**.scss')
     .pipe(sass({
       outputStyle: 'nested'
     }).on('error', sass.logError))
     .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest('src/style/'))
+    .pipe(gulp.dest('src/compiled'))
     .on('error', swallowError)
 })
 
 gulp.task('babel', function () {
-  return gulp.src('src/game.js')
+  return gulp.src('src/*.js')
     .pipe(babel())
-    .pipe(gulp.dest('src/js'))
+    .pipe(gulp.dest('src/compiled'))
     .on('error', swallowError)
 })
 
