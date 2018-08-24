@@ -6,6 +6,7 @@ cube.addEventListener('click', function (e) {
 
 document.addEventListener('pointerlockchange', function (e) {
   if (document.pointerLockElement === cube) {
+    requestAnimationFrame(timerTick);
     document.addEventListener('mousemove', updatePos, false);
   } else {
     document.removeEventListener('mousemove', updatePos, false);
