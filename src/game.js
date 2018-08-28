@@ -15,8 +15,8 @@ const rand = function (min, max) {
   return Math.floor(min + (Math.random() * max))
 }
 
-const checkChar = function (key) {
-  words[score.wordIndex].testKey(key)
+const checkChar = function (e) {
+  words[score.wordIndex].testKey(e)
   if (words[score.wordIndex].index >= words[score.wordIndex].word.length) {
     score.wordIndex++
     score.add(200)
@@ -57,11 +57,15 @@ function Word (word) {
   this.word = word
   this.index = 0
 
-  this.testKey = function (key) {
-    if (key === this.word[this.index]) {
+  this.testKey = function (e) {
+    if (e.key === this.word[this.index]) {
+      goodSound(e.keyCode)
       this.index++
       score.add(100)
       updateWords()
+    } else {
+      badSound(e.keyCode)
+      score.add(-200)
     }
   }
 }
