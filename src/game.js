@@ -65,7 +65,7 @@ const updateScore = function (gameTimer) {
 }
 
 function Word (word) {
-  this.word = word          // Word string
+  this.word = word + ' '          // Word string
   this.index = 0            // Current charecter position
 
   // Validate if the key pressed matches the current character
