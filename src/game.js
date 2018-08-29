@@ -76,6 +76,7 @@ function Word (word) {
       score.add(100)
       updateWords()
     } else {
+      flashClass('bad', document.body, 255)
       badSound(e.keyCode)
       score.add(-200)
     }
@@ -107,6 +108,13 @@ const timerTick = function (_timestamp, skip) {
 
 const pause = function () {
   alert('game paused')
+}
+
+const flashClass = function (className, element, duration) {
+  element.classList.add(className)
+  setTimeout(function () {
+    element.classList.remove(className)
+  }, duration)
 }
 
 const init = function () {

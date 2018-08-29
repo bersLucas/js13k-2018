@@ -4,6 +4,8 @@ $dGrey: #c2c2c2;
 $lBlue: #c7deff;
 $blue: #7cb3ff;
 $black: #4a4a4a;
+$transition: all 250ms ease-in-out;
+@import 'animations';
 
 * {
   box-sizing: border-box;
@@ -15,6 +17,7 @@ $black: #4a4a4a;
   height: 20px;
   margin: 0 0 20px;
   position: relative;
+  z-index: 10;
 
   #background,
   #foreground {
@@ -71,6 +74,8 @@ body {
     left: 0;
     right: 0;
     margin: auto;
+    position: relative;
+    z-index: 30;
     //text container
     & > span {
       padding: 100px;
@@ -95,6 +100,30 @@ body {
 
     span.next {
       opacity: 0.5;
+    }
+  }
+  //Red flash
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: radial-gradient(transparent 50%, rgba(255,0,0,0.3));
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  &.bad {
+    //Red flash
+    &:after {
+      opacity: 1;
+    }
+    //shake
+    div#gamecube {
+      animation: shake 250ms ease-in-out;
     }
   }
 }
