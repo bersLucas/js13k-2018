@@ -15,8 +15,10 @@ const rand = function (min, max) {
   return Math.floor(min + (Math.random() * max))
 }
 
+// On keypress
 const checkChar = function (e) {
   words[score.wordIndex].testKey(e)
+  // Check if completed a word, if so, add points, add new word
   if (words[score.wordIndex].index >= words[score.wordIndex].word.length) {
     score.wordIndex++
     score.add(200)
@@ -28,6 +30,7 @@ const updateWords = function () {
   if (words) {
     let innerHTML = ''
 
+    // Parse every word and apply styles
     words.forEach(function (word) {
       innerHTML += `<span class="${word.index >= word.word.length ? 'current' : 'next'}">`
       Array.from(word.word).forEach(function (char, index) {
@@ -42,21 +45,30 @@ const updateWords = function () {
 }
 
 function Score () {
-  this.gameScore = 0
-  this.gameTimer = 10000
-  this.wordIndex = 0
+  this.gameScore = 0        // User's score
+  this.gameTimer = 10000    // Time remaining
+  this.wordIndex = 0        // Words complete
 
+  // Add points & remaining time
   this.add = function (x) {
     this.gameTimer += x
     this.gameScore += x
-    scoreText.innerHTML = this.gameScore
   }
 }
 
-function Word (word) {
-  this.word = word
-  this.index = 0
+// Render score on screen
+const updateScore = function (gameTimer) {
+  const width = ((gameTimer / 10000) * 100) + '%'
+  scoreBar.style.width = width
+  scoreMarker.style.left = width
+  scoreText.innerHTML = score.gameScore
+}
 
+function Word (word) {
+  this.word = word          // Word string
+  this.index = 0            // Current charecter position
+
+  // Validate if the key pressed matches the current character
   this.testKey = function (e) {
     if (e.key === this.word[this.index]) {
       goodSound(e.keyCode)
@@ -70,21 +82,31 @@ function Word (word) {
   }
 }
 
-const timerTick = function (_timestamp) {
-  score.gameTimer -= (_timestamp - timestamp)
-  timestamp = _timestamp
-  updateScore(score.gameTimer)
+// Timer loop
+const timerTick = function (_timestamp, skip) {
+  // Check if pointer is locked on the game
+  if (document.pointerLockElement === cube) {
+    // True if you're unpausing. Prevents timer from jumping
+    if (skip) {
+      timestamp = _timestamp
+    } else {
+      score.gameTimer -= (_timestamp - timestamp)
+      timestamp = _timestamp
+    }
+    updateScore(score.gameTimer)
 
-  if (score.gameTimer < 0) {
-    return alert('game over')
+    if (score.gameTimer < 0) {
+      return alert('game over')
+    }
+    requestAnimationFrame(timerTick)
+  } else {
+    // Pointer is not locked on game, pause it.
+    pause()
   }
-  requestAnimationFrame(timerTick)
 }
 
-const updateScore = function (gameTimer) {
-  const width = ((gameTimer / 10000) * 100) + '%'
-  scoreBar.style.width = width
-  scoreMarker.style.left = width
+const pause = function () {
+  alert('game paused')
 }
 
 const init = function () {
