@@ -23,3 +23,20 @@
     transform: translateX(0px);
   }
 }
+@keyframes shake1 {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+
+  33% {
+    transform: scale(1.10) translateY(5px);
+  }
+
+  66% {
+    transform: scale(1.15) translateY(-5px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}

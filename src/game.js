@@ -11,10 +11,6 @@ let score = new Score()
 // Most used English (US) words.
 const WORD_LIST = 'the,of,and,a,to,in,is,you,that,it,he,was,for,on,are,as,with,his,they,I,at,be,this,have,from,or,one,had,by,word,but,not,what,all,were,we,when,your,can,said,there,use,an,each,which,she,do,how,their,if,will,up,other,about,out,many,then,them,these,so,some,her,would,make,like,him,into,time,has,look,two,more,write,go,see,number,no,way,could,people,my,than,first,water,been,call,who,oil,its,now,find,long,down,day,did,get,come,made,may,part'.split(',')
 
-const rand = function (min, max) {
-  return Math.floor(min + (Math.random() * max))
-}
-
 // On keypress
 const checkChar = function (e) {
   words[score.wordIndex].testKey(e)
@@ -22,8 +18,12 @@ const checkChar = function (e) {
   if (words[score.wordIndex].index >= words[score.wordIndex].word.length) {
     score.wordIndex++
     score.add(200)
-    words.push(new Word(WORD_LIST[rand(0, WORD_LIST.length)]))
+    addWord()
   }
+}
+
+const rand = function (min, max) {
+  return Math.floor(min + (Math.random() * max))
 }
 
 const updateWords = function () {
@@ -32,7 +32,7 @@ const updateWords = function () {
 
     // Parse every word and apply styles
     words.forEach(function (word) {
-      innerHTML += `<span class="${word.index >= word.word.length ? 'current' : 'next'}">`
+      innerHTML += `<span class="${word.index >= word.word.length ? 'current' : 'next'} ${word.style ? word.style : ''}">`
       Array.from(word.word).forEach(function (char, index) {
         let className = (index < word.index) ? 'good' : 'bad'
         innerHTML += `<span class="${className}">${char}</span>`
@@ -64,8 +64,9 @@ const updateScore = function (gameTimer) {
   scoreText.innerHTML = score.gameScore
 }
 
-function Word (word) {
-  this.word = word + ' '          // Word string
+function Word (word, style) {
+  this.word = word + ' '    // Word string
+  this.style = style        // CSS effects
   this.index = 0            // Current charecter position
 
   // Validate if the key pressed matches the current character
