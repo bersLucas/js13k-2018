@@ -21,7 +21,7 @@ gulp.task('default', function (c) {
 })
 
 gulp.task('sass', function () {
-  return gulp.src('src/**.scss')
+  return gulp.src('src/scss/**.scss')
     .pipe(sass({
       outputStyle: 'nested'
     }).on('error', sass.logError))

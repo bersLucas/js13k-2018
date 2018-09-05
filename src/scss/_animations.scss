@@ -40,3 +40,20 @@
     transform: scale(1) translateY(0);
   }
 }
+@keyframes flash-red {
+  0% {
+    color: inherit;
+  }
+
+  90% {
+    color: inherit;
+  }
+
+  100% {
+    color: red;
+  }
+}
+
+.flash-red {
+  animation: flash-red 10s infinite;
+}

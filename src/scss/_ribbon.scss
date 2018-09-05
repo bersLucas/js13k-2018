@@ -1,0 +1,59 @@
+#ribbon {
+  background: #333;
+  color: white;
+
+  #toolbar {
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 3px 5px;
+      display: inline-block;
+    }
+  }
+
+  #button-container {
+    background: #e0f2fe;
+    padding-left: 5px;
+    border-bottom: 1px solid #a2b6cf;
+    white-space: nowrap;
+
+    & > div {
+      display: inline-block;
+      margin: 0 10px 0 0;
+      padding: 0 10px 0 0;
+      box-shadow: 0 -1px 0 #fff inset;
+
+      &:not(:last-child) {
+        border-right: 1px solid #a2a8c5;
+      }
+    }
+
+    button {
+      padding: 20px 0 0;
+      background: #dce2fd;
+      margin: 5px 2px;
+      border-radius: 3px;
+      border: 1px solid #abc7dd;
+      position: relative;
+      box-shadow: 0 2px 3px rgba(0,0,0,.1), 0 1px 0 #fff inset;
+      min-width: 75px;
+      text-align: center;
+      overflow: hidden;
+      font-size: 2em;
+      text-shadow: 3px 3px 0 #a2a8c5;
+
+      span {
+        background: #c0d6f2;
+        position: relative;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+        display: inline-block;
+        text-shadow: 0 1px 0 #eee;
+      }
+    }
+  }
+}
