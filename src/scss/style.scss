@@ -77,9 +77,24 @@ body {
     margin: auto;
     position: relative;
     z-index: 30;
+    padding: 100px;
+
+    .instructions {
+      color: grey;
+      margin-bottom: 15px;
+
+      p {
+        margin: 0 0 10px;
+      }
+
+      ol,
+      ul {
+        padding-left: 0;
+        list-style-position: inside;
+      }
+    }
     //text container
     & > span {
-      padding: 100px;
       display: block;
       //word
       & > span {
@@ -89,6 +104,10 @@ body {
 
     span.good {
       color: green;
+
+      + span.bad {
+        text-decoration: underline;
+      }
     }
 
     span.bad {
@@ -106,7 +125,7 @@ body {
         opacity: 0;
       }
 
-      &.shake1 {
+      + &.shake1 {
         animation: shake1 250ms infinite ease-in-out;
       }
     }

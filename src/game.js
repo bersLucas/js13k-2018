@@ -40,7 +40,7 @@ const updateWords = function () {
       innerHTML += `</span>&nbsp;`
     })
 
-    cube.children[0].innerHTML = innerHTML
+    cube.children[1].innerHTML = innerHTML
   }
 }
 
