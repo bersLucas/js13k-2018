@@ -40,6 +40,15 @@
     transform: scale(1) translateY(0);
   }
 }
+@keyframes shake2 {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
 @keyframes flash-red {
   0% {
     color: inherit;
@@ -56,4 +65,12 @@
 
 .f-r {
   animation: flash-red 10s infinite;
+}
+
+.shake1 {
+  animation: shake1 250ms infinite ease-in-out;
+}
+
+.shake2 {
+  animation: shake2 250ms infinite ease-in-out;
 }

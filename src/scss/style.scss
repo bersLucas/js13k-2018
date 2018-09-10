@@ -124,10 +124,6 @@ body {
       & + .next + .next {
         opacity: 0;
       }
-
-      &.shake1 {
-        animation: shake1 250ms infinite ease-in-out;
-      }
     }
   }
   //Red flash

@@ -50,22 +50,25 @@ const dialog = [
   },
   {
     words: 'gur bofreire vf abg frcnengr sebz gur bowrpg orvat bofreirq',
-    effect: 'shake1'
+    effect: 'shake2'
 
   },
   {
     words: 'yrg zr va',
-    effect: 'shake1'
+    effect: 'shake2'
 
   },
   {
     words: 'YRG ZR VA YRG ZR VA YRG ZR VA',
-    effect: 'shake1'
+    effect: 'shake2'
 
   },
   {
     words: 'JURER NER LBH',
-    effect: 'shake1'
-
+    effect: 'shake2'
+  },
+  {
+    words: 'V\’yy tvir lbh zl rgreany fbhy',
+    effect: 'shake2'
   }
 ]
