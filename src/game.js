@@ -32,7 +32,7 @@ const updateWords = function () {
 
     // Parse every word and apply styles
     words.forEach(function (word) {
-      innerHTML += `<span class="${word.index >= word.word.length ? 'current' : 'next'} ${word.style ? word.style : ''}">`
+      innerHTML += `<span class="${word.index >= word.word.length ? 'current' : 'next'} ${word.style ? word.style + ' animate' : ''}">`
       Array.from(word.word).forEach(function (char, index) {
         let className = (index < word.index) ? 'good' : 'bad'
         innerHTML += `<span class="${className}">${char}</span>`
@@ -71,6 +71,7 @@ function Word (word, style) {
 
   // Validate if the key pressed matches the current character
   this.testKey = function (e) {
+    console.log(e.key)
     if (e.key === this.word[this.index]) {
       goodSound(e.keyCode)
       this.index++

@@ -4,19 +4,19 @@
   }
 
   20% {
-    transform: translateX(33px);
+    transform: translateX(22px);
   }
 
   40% {
-    transform: translateX(-33px);
+    transform: translateX(-22px);
   }
 
   60% {
-    transform: translateX(33px);
+    transform: translateX(22px);
   }
 
   80% {
-    transform: translateX(-33px);
+    transform: translateX(-22px);
   }
 
   100% {
@@ -76,14 +76,23 @@
   animation: flash-red 10s infinite;
 }
 
-.shake1 {
+.animate span {
+  display: inline-block;
+}
+@for $i from 1 through 10 {
+  .animate span:nth-child(#{$i}) {
+    animation-delay: $i * 50ms;
+  }
+}
+
+.shake1 span {
   animation: shake1 250ms infinite ease-in-out;
 }
 
-.shake2 {
+.shake2 span {
   animation: shake2 250ms infinite ease-in-out;
 }
 
-.shake3 {
+.shake3 span {
   animation: shake3 200ms infinite linear;
 }
