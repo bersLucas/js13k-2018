@@ -18,7 +18,7 @@ const playSound = function (keyCode, type) {
   gainNode.connect(audioCtx.destination)
   oscillator.connect(gainNode)
 
-  gainNode.gain.value = 0.009
+  gainNode.gain.value = 0.02
   oscillator.start()
   oscillator.stop(0.5)
 }
