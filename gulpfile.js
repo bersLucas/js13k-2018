@@ -1,16 +1,11 @@
 var gulp = require('gulp')
 var sass = require('gulp-sass')
-var autoprefixer = require('gulp-autoprefixer')
 var inline = require('gulp-inline')
 var uglify = require('gulp-uglify')
 var minifyCss = require('gulp-minify-css')
 var htmlmin = require('gulp-htmlmin')
 var runSequence = require('run-sequence')
 var babel = require('gulp-babel')
-
-var autoprefixerOptions = {
-  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-}
 
 gulp.task('watch', function () {
   gulp.watch('src/**/*.+(scss|html|js)', ['default'])
@@ -25,7 +20,6 @@ gulp.task('sass', function () {
     .pipe(sass({
       outputStyle: 'nested'
     }).on('error', sass.logError))
-    .pipe(autoprefixer(autoprefixerOptions))
     .pipe(gulp.dest('src/compiled'))
 })
 
