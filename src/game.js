@@ -1,8 +1,8 @@
-const cube = document.getElementById('gamecube')
+const cube = document.getElementById('gc')
 const box = document.getElementById('box')
-const scoreBar = document.getElementById('foreground')
-const scoreMarker = document.getElementById('marker')
-const scoreText = document.querySelector('#score span')
+const scoreBar = document.getElementById('fg')
+const scoreMarker = document.getElementById('ma')
+const scoreText = document.querySelector('#sc span')
 let position = {x: 0, y: 0}                       // Track mouse position
 let words = []                                    // Word list
 let timestamp = 0                                 // Used for deltaTime

@@ -14,30 +14,30 @@ $transition: all 250ms ease-in-out;
   padding: 0;
 }
 
-#score {
+#sc {
   height: 20px;
   margin: 0 0 20px;
   position: relative;
   z-index: 10;
 
-  #background,
-  #foreground {
+  #bg,
+  #fg {
     width: 100%;
     position: absolute;
     height: 100%;
   }
 
-  #background {
+  #bg {
     background: white;
   }
 
-  #foreground {
+  #fg {
     background: $lBlue;
     z-index: 10;
     width: 50%;
   }
 
-  svg#marker {
+  svg#ma {
     position: absolute;
     z-index: 20;
     height: 100%;
@@ -63,7 +63,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: $grey;
 
-  div#gamecube {
+  div#gc {
     background: white;
     width: 80%;
     max-width: 1020px;
@@ -79,7 +79,7 @@ body {
     z-index: 30;
     padding: 100px;
 
-    .instructions {
+    .in {
       color: grey;
       margin-bottom: 15px;
 
@@ -125,7 +125,7 @@ body {
         opacity: 0;
       }
 
-      + &.shake1 {
+      &.shake1 {
         animation: shake1 250ms infinite ease-in-out;
       }
     }
@@ -150,7 +150,7 @@ body {
       opacity: 1;
     }
     //shake
-    div#gamecube {
+    div#gc {
       animation: shake 250ms ease-in-out;
     }
   }
