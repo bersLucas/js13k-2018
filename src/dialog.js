@@ -40,17 +40,17 @@ const dialog = [
   },
   {
     words: 'yrg zr fyrrc',
-    effect: 'shake1'
+    effect: 'shake3'
 
   },
   {
     words: 'yrgzrfyrrc yrgzrfyrrc yrgzrfyrrc',
-    effect: 'shake1'
+    effect: 'shake3'
 
   },
   {
     words: 'gur bofreire vf abg frcnengr sebz gur bowrpg orvat bofreirq',
-    effect: 'shake2'
+    effect: 'shake3'
 
   },
   {
