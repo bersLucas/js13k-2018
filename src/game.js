@@ -71,8 +71,7 @@ function Word (word, style) {
 
   // Validate if the key pressed matches the current character
   this.testKey = function (e) {
-    console.log(e.key)
-    if (e.key === this.word[this.index]) {
+    if (e.key === this.word[this.index] || this.word[this.index] === '’') {
       goodSound(e.keyCode)
       this.index++
       score.add(100)
