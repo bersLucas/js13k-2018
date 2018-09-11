@@ -46,7 +46,7 @@
   }
 
   to {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 @keyframes shake3 {
@@ -95,4 +95,12 @@
 
 .shake3 span {
   animation: shake3 200ms infinite linear;
+}
+
+.pull_right {
+  float: right;
+}
+
+.pull_left {
+  float: left;
 }

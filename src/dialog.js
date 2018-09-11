@@ -5,6 +5,14 @@ const rand = function (min, max) {
 const addWord = function () {
   if (rand(0, 10) === 1) {
     let SELECTED_DIALOG = dialog[rand(0, dialog.length)]
+
+    const pull = rand(1, 4)
+    if (pull === 1) {
+      flashClass('pull_left', cube, 1500)
+    } else if (pull === 2) {
+      flashClass('pull_right', cube, 1500)
+    }
+
     SELECTED_DIALOG.words.split(' ').forEach(function (word) {
       words.push(new Word(unROT13(word), SELECTED_DIALOG.effect))
     })
@@ -25,6 +33,10 @@ const unROT13 = function (word) {
 }
 
 const dialog = [
+  {
+    words: 'Cyrnfr fgbc',
+    effect: 'shake2'
+  },
   {
     words: 'jura ner lbh tbvat gb fgbc oynzvat guvatf gung ner bhg bs lbhe pbageby?',
     effect: 'shake1'
