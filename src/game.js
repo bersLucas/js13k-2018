@@ -2,6 +2,7 @@ const cube = document.getElementById('gc')
 const game = document.getElementById('game')
 const start = document.getElementById('start')
 const box = document.getElementById('box')
+const type = document.getElementById('type')
 const scoreBar = document.getElementById('fg')
 const scoreMarker = document.getElementById('ma')
 const scoreText = document.querySelector('#sc span')
@@ -45,7 +46,7 @@ const updateWords = function () {
       innerHTML += `</span>&nbsp;`
     })
 
-    cube.children[1].innerHTML = innerHTML
+    type.innerHTML = innerHTML
   }
 }
 
@@ -128,6 +129,7 @@ const init = function () {
   words.push(new Word(WORD_LIST[rand(0, WORD_LIST.length)]))
   words.push(new Word(WORD_LIST[rand(0, WORD_LIST.length)]))
   updateWords()
+  requestAnimationFrame(function (timestamp) {
+    timerTick(timestamp, true)
+  })
 }
-
-init()
