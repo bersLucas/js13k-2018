@@ -20,7 +20,10 @@ const checkChar = function (e) {
   if (words[score.wordIndex].index >= words[score.wordIndex].word.length) {
     score.wordIndex++
     score.add(200)
-    addWord()
+
+    if (score.wordIndex + 3 > words.length) {
+      addWord()
+    }
   }
 }
 
