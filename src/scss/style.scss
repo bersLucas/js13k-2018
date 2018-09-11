@@ -63,6 +63,18 @@ body {
   overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: $grey;
+  //game over screen
+  &.go {
+    background: #000;
+    font-family: monospace;
+    color: #fff;
+    padding: 20px;
+    font-size: 1.2em;
+
+    &:after {
+      content: none;
+    }
+  }
 
   div#gc {
     background: white;
