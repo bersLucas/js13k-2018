@@ -16,7 +16,7 @@ document.addEventListener('pointerlockchange', (e) => {
   if (document.pointerLockElement === cube) {
     initKeyboard()
     document.addEventListener('mousemove', updatePos, false)
-  } else {
+    // document.addEventListener('click', clickFunc, false)
     document.removeEventListener('mousemove', updatePos, false)
   }
 })
@@ -28,6 +28,12 @@ const updatePos = function (e) {
   requestAnimationFrame(draw)
 }
 
-const draw = function drawBoxPositions () {
+const clickFunc = function (e) {
+  if (online) {
+    return
+  }
+}
+
+const draw = function () {
   box.style.cssText = `transform: translateX(${position.x}px) translateY(${position.y}px)`
 }

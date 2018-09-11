@@ -3,6 +3,16 @@ const rand = function (min, max) {
 }
 
 const addWord = function () {
+  if (rand(0, 2) === 1) {
+    console.log('a')
+    online = false
+    vpn.className = 'offline'
+
+    vpn.onClick = function (e) {
+      console.log(e)
+    }
+  }
+
   if (rand(0, 10) === 1) {
     let SELECTED_DIALOG = dialog[rand(0, dialog.length)]
 
