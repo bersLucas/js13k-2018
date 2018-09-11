@@ -34,15 +34,15 @@ const unROT13 = function (word) {
 
 const dialog = [
   {
-    words: 'Cyrnfr fgbc',
+    words: 'cyrnfr fgbc',
     effect: 'shake2'
   },
   {
-    words: 'jura ner lbh tbvat gb fgbc oynzvat guvatf gung ner bhg bs lbhe pbageby?',
+    words: 'fgbc oynzvat lbhefrys',
     effect: 'shake1'
   },
   {
-    words: 'gurer vf abguvat lbh pna pbageby',
+    words: 'vg\'f bhg bs lbhe pbageby',
     effect: 'shake1'
   },
   {
@@ -56,22 +56,17 @@ const dialog = [
 
   },
   {
-    words: 'yrgzrfyrrc yrgzrfyrrc yrgzrfyrrc',
+    words: 'yrg zr fyrrc',
     effect: 'shake3'
 
   },
   {
-    words: 'gur bofreire vf abg frcnengr sebz gur bowrpg orvat bofreirq',
+    words: 'v bofreir',
     effect: 'shake3'
 
   },
   {
     words: 'yrg zr va',
-    effect: 'shake2'
-
-  },
-  {
-    words: 'YRG ZR VA YRG ZR VA YRG ZR VA',
     effect: 'shake2'
 
   },

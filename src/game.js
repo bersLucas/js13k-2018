@@ -52,7 +52,7 @@ const updateWords = function () {
 
 function Score () {
   this.gameScore = 0        // User's score
-  this.gameTimer = 10000    // Time remaining
+  this.gameTimer = 5000    // Time remaining
   this.wordIndex = 0        // Words complete
 
   // Add points & remaining time
