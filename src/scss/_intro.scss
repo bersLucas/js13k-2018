@@ -15,60 +15,60 @@
   width: 100vw;
   font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
   z-index: 10;
+}
 
-  #tb {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 40px;
-    background: $dGrey;
-    position: absolute;
-    bottom: 0;
-    align-items: center;
-    font-size: 1.2em;
-    letter-spacing: 10px;
+#tb {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  background: $dGrey;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  font-size: 1.2em;
+  letter-spacing: 10px;
 
-    button {
-      padding: 0 20px;
-      font-weight: 700;
-      border: 1px solid #000;
-      margin: 5px;
-      height: calc(100% - 10px);
-      letter-spacing: initial;
-      box-shadow: 2px 2px 0 white inset, 2px 2px 0 grey;
-    }
+  button {
+    padding: 0 20px;
+    font-weight: 700;
+    border: 1px solid #000;
+    margin: 5px;
+    height: calc(100% - 10px);
+    letter-spacing: initial;
+    box-shadow: 2px 2px 0 white inset, 2px 2px 0 grey;
   }
+}
 
-  #apps {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 400px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 0;
+#apps {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 400px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 0;
 
-    button {
-      background: 0 0;
-      border: none;
-      color: #fff;
-      text-shadow: 2px 2px 0 #000;
-      font-size: 2.5em;
-      line-height: 0.85em;
-      margin: 10px;
-      width: 150px;
-      padding: 20px 0 5px;
-      cursor: pointer;
+  button {
+    background: 0 0;
+    border: none;
+    color: #fff;
+    text-shadow: 2px 2px 0 #000;
+    font-size: 2.5em;
+    line-height: 0.85em;
+    margin: 10px;
+    width: 150px;
+    padding: 20px 0 5px;
+    cursor: pointer;
 
-      span {
-        font-size: 13px;
-      }
+    span {
+      font-size: 13px;
+    }
 
-      &:active span,
-      &:focus span {
-        background: blue;
-        color: white;
-      }
+    &:active span,
+    &:focus span {
+      background: blue;
+      color: white;
     }
   }
 }
