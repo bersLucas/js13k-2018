@@ -1,4 +1,6 @@
 const cube = document.getElementById('gc')
+const game = document.getElementById('game')
+const start = document.getElementById('start')
 const box = document.getElementById('box')
 const scoreBar = document.getElementById('fg')
 const scoreMarker = document.getElementById('ma')
