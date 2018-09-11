@@ -71,6 +71,19 @@
     color: red;
   }
 }
+@keyframes invert {
+  0% {
+    filter: invert(0%);
+  }
+
+  90% {
+    filter: invert(0%);
+  }
+
+  100% {
+    filter: invert(100%);
+  }
+}
 
 .f-r {
   animation: flash-red 10s infinite;
