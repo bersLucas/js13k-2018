@@ -1,5 +1,7 @@
 # js13k-2018
 
+<img src="https://raw.githubusercontent.com/bersLucas/js13k-2018/master/screenshot.jpg"/>
+
 ## Building
 ```bash
 # Clone repository
