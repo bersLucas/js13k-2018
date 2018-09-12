@@ -1,5 +1,6 @@
 const cube = document.getElementById('gc')
 const vpn = document.getElementById('vpn')
+const bd = document.getElementById('bd')
 const game = document.getElementById('game')
 const start = document.getElementById('start')
 const box = document.getElementById('box')
@@ -57,7 +58,7 @@ const updateWords = function () {
 
 function Score () {
   this.gameScore = 0        // User's score
-  this.gameTimer = 7500    // Time remaining
+  this.gameTimer = 15000    // Time remaining
   this.wordIndex = 0        // Words complete
 
   // Add points & remaining time
@@ -123,19 +124,19 @@ const gameOver = function (reason) {
     playSound(100, 'square')
   }, 900)
 
-  document.body.classList.add('go')
-  document.exitPointerLock()
-  document.removeEventListener('mousemove', updatePos, false)
-  document.onkeydown = null
-  document.body.innerHTML = '<p>game over.</p>'
-  if (reason == 'score') {
-    document.body.innerHTML += '<p>you were unable to type fast enough.</p>'
-  } else {
-    document.body.innerHTML += '<p>i told you not to look away.</p>'
-  }
-
-  document.body.innerHTML += '<p>Final score: ' + score.gameScore + ' (<a href="https://twitter.com/home?status=I%20got%20a%20score%20of%20' + score.gameScore + '%20on%20this%20game.%0A%0A' + window.location.href + '">Share on twitter</a>)</p>'
-  document.body.innerHTML += '<br/><br/><br/><p><a href="javascript:location.reload();">Try again.</a></p>'
+  // document.body.classList.add('go')
+  // document.exitPointerLock()
+  // document.removeEventListener('mousemove', updatePos, false)
+  // document.onkeydown = null
+  // document.body.innerHTML = '<p>game over.</p>'
+  // if (reason == 'score') {
+  //   document.body.innerHTML += '<p>you were unable to type fast enough.</p>'
+  // } else {
+  //   document.body.innerHTML += '<p>i told you not to look away.</p>'
+  // }
+  //
+  // document.body.innerHTML += '<p>Final score: ' + score.gameScore + ' (<a href="https://twitter.com/home?status=I%20got%20a%20score%20of%20' + score.gameScore + '%20on%20this%20game.%0A%0A' + window.location.href + '">Share on twitter</a>)</p>'
+  // document.body.innerHTML += '<br/><br/><br/><p><a href="javascript:location.reload();">Try again.</a></p>'
 }
 
 const flashClass = function (className, element, duration) {

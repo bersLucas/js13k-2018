@@ -37,6 +37,9 @@ const mouseClick = function (e) {
     let bounds = vpn.getBoundingClientRect()
     if (position.x > bounds.x + 25 && position.y > bounds.y + 25 && position.y < bounds.y + 75) {
       online = true
+      bd.style.opacity = null
+      vpn.style.top = null
+      vpn.style.right = null
       vpn.className = 'online'
     }
   }

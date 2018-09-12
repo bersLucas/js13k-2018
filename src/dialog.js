@@ -5,6 +5,9 @@ const rand = function (min, max) {
 const addWord = function () {
   if (rand(0, 10) === 1) {
     online = false
+    bd.style.opacity = 0.7
+    vpn.style.top = rand(0, window.innerHeight) + 'px'
+    vpn.style.right = rand(0, window.innerWidth) + 'px'
     vpn.className = 'offline'
   }
 
