@@ -16,7 +16,8 @@ document.addEventListener('pointerlockchange', (e) => {
   if (document.pointerLockElement === cube) {
     initKeyboard()
     document.addEventListener('mousemove', updatePos, false)
-    // document.addEventListener('click', clickFunc, false)
+    document.addEventListener('click', mouseClick, false)
+  } else {
     document.removeEventListener('mousemove', updatePos, false)
   }
 })
@@ -28,12 +29,20 @@ const updatePos = function (e) {
   requestAnimationFrame(draw)
 }
 
-const clickFunc = function (e) {
+const mouseClick = function (e) {
   if (online) {
     return
+  } else {
+    // Check if you click on the VPN box
+    let bounds = vpn.getBoundingClientRect()
+    if (position.x > bounds.x + 25 && position.y > bounds.y + 25 && position.y < bounds.y + 75) {
+      online = true
+      vpn.className = 'online'
+    }
   }
 }
 
-const draw = function () {
+// Move Cursor
+const draw = function drawBoxPositions () {
   box.style.cssText = `transform: translateX(${position.x}px) translateY(${position.y}px)`
 }

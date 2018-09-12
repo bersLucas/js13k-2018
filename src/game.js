@@ -19,14 +19,16 @@ const WORD_LIST = 'the,of,and,a,to,in,is,you,that,it,he,was,for,on,are,as,with,h
 
 // On keypress
 const checkChar = function (e) {
-  words[score.wordIndex].testKey(e)
-  // Check if completed a word, if so, add points, add new word
-  if (words[score.wordIndex].index >= words[score.wordIndex].word.length) {
-    score.wordIndex++
-    score.add(200)
+  if (online) {
+    words[score.wordIndex].testKey(e)
+    // Check if completed a word, if so, add points, add new word
+    if (words[score.wordIndex].index >= words[score.wordIndex].word.length) {
+      score.wordIndex++
+      score.add(200)
 
-    if (score.wordIndex + 3 > words.length) {
-      addWord()
+      if (score.wordIndex + 3 > words.length) {
+        addWord()
+      }
     }
   }
 }
@@ -55,7 +57,7 @@ const updateWords = function () {
 
 function Score () {
   this.gameScore = 0        // User's score
-  this.gameTimer = 5000    // Time remaining
+  this.gameTimer = 7500    // Time remaining
   this.wordIndex = 0        // Words complete
 
   // Add points & remaining time
