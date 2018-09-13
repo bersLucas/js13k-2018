@@ -70,7 +70,7 @@ function Score () {
 
 // Render score on screen
 const updateScore = function (gameTimer) {
-  const width = ((gameTimer / 10000) * 100) + '%'
+  const width = ((gameTimer / 15000) * 100) + '%'
   scoreBar.style.width = width
   scoreMarker.style.left = width
   scoreText.innerHTML = score.gameScore
@@ -124,19 +124,19 @@ const gameOver = function (reason) {
     playSound(100, 'square')
   }, 900)
 
-  // document.body.classList.add('go')
-  // document.exitPointerLock()
-  // document.removeEventListener('mousemove', updatePos, false)
-  // document.onkeydown = null
-  // document.body.innerHTML = '<p>game over.</p>'
-  // if (reason == 'score') {
-  //   document.body.innerHTML += '<p>you were unable to type fast enough.</p>'
-  // } else {
-  //   document.body.innerHTML += '<p>i told you not to look away.</p>'
-  // }
-  //
-  // document.body.innerHTML += '<p>Final score: ' + score.gameScore + ' (<a href="https://twitter.com/home?status=I%20got%20a%20score%20of%20' + score.gameScore + '%20on%20this%20game.%0A%0A' + window.location.href + '">Share on twitter</a>)</p>'
-  // document.body.innerHTML += '<br/><br/><br/><p><a href="javascript:location.reload();">Try again.</a></p>'
+  document.body.classList.add('go')
+  document.exitPointerLock()
+  document.removeEventListener('mousemove', updatePos, false)
+  document.onkeydown = null
+  document.body.innerHTML = '<p>game over.</p>'
+  if (reason == 'score') {
+    document.body.innerHTML += '<p>you were unable to type fast enough.</p>'
+  } else {
+    document.body.innerHTML += '<p>i told you not to look away.</p>'
+  }
+
+  document.body.innerHTML += '<p>Final score: ' + score.gameScore + ' (<a href="https://twitter.com/home?status=I%20got%20a%20score%20of%20' + score.gameScore + '%20on%20this%20game.%0A%0A' + window.location.href + '">Share on twitter</a>)</p>'
+  document.body.innerHTML += '<br/><br/><br/><p><a href="javascript:location.reload();">Try again.</a></p>'
 }
 
 const flashClass = function (className, element, duration) {
