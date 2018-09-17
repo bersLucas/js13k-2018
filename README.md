@@ -2,6 +2,17 @@
 
 <img src="https://raw.githubusercontent.com/bersLucas/js13k-2018/master/screenshot.jpg"/>
 
+## Play Demo:
+
+https://js13k.lucasbersier.com/demo.html
+
+## Requirements
+| Requirement | |
+|-|-|
+| Web Audio | Chrome 34+, Firefox 25+ |
+| Pointer Lock | Chrome 37+, Firefox 41+ |
+|Emoji Support|If you can see these, you are fine: &#x2795;&#x1F4F6;&#x1F50A;&#x1F3E0;&#x1D5DB;</u>&#x1D5D8;&#x1D5DF;&#x1D5E3;&#x2709;&#xFE0F;&#x1F4BF;&#x1F30F;&#x1F4DD;&#x267C;&#x1F4C4;&#x1F4BE;&#x1F4CB;&#x2702;&#xFE0F;&#x1F4DD;&#x1F480;&#x1F50E;&#x1F516;&#x2709;&#xFE0F;&#x1F4CA;&#x1F512;&#x1F513;|
+
 ## Building
 ```bash
 # Clone repository
