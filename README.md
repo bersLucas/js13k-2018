@@ -26,8 +26,8 @@ gulp
 * `submission.html` is the submitted file for the [js13k 2018](https://js13kgames.com/submit) competition. Current game may have been updated since the competition, so I reccomend you build it yourself. The `src/` folder contained an uncompressed, readable version.
 
 ## Blog posts
-* [Mouse movement with CSS --vars in < 600 bytes](https://js13k.lucasbersier.com/mouse-movement-with-css-vars-in-806-bytes)
-* [Using the Pointer Lock API](https://js13k.lucasbersier.com/using-the-pointer-lock-api)
-* [My Gulp File](https://js13k.lucasbersier.com/my-gulp-file)
-* [Inspiration](https://js13k.lucasbersier.com/inspiration)
-* [Sound From Keyboard Events](https://js13k.lucasbersier.com/sound-from-keyboard-events)
+* [Mouse movement with CSS --vars in < 600 bytes](https://github.com/bersLucas/js13k-2018/blob/master/blog/01%20-%20Mouse%20movement%20with%20CSS%20variables.md)
+* [Using the Pointer Lock API](https://github.com/bersLucas/js13k-2018/blob/master/blog/02%20-%20Using%20the%20Pointer%20Lock%20API.md)
+* [My Gulp File](https://github.com/bersLucas/js13k-2018/blob/master/blog/03%20-%20My%20gulp%20file%20and%20how%20I%20initalize%20a%20(game)%20project.md)
+* [Sound From Keyboard Events](https://github.com/bersLucas/js13k-2018/blob/master/blog/04%20-%20Sound%20From%20Keyboard%20Events.md)
+* [The Post Partum Post](https://github.com/bersLucas/js13k-2018/blob/master/blog/05%20-%20The%20Post-Partum%20Post.md)
